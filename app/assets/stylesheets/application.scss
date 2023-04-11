@@ -106,6 +106,7 @@ h1, h2, h3, h4, h5, p {
 #home-container {
   margin-top: 25px;
   text-align: center;
+  height: 500px;
   background-color: lightgrey;
 }
 
@@ -114,14 +115,15 @@ html {
     font-family: "Open Sans", sans-serif; /* this should be the rest of the output you got from Google Fonts */
   }
 
-  
+  /*
   #fakejumbo {
-  background-image: url(jumbo.webp);
+  background-image: url(jumbo.webp));
   background-color: #cccccc;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   }
+*/
 
 html,
 body {
