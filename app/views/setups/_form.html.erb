@@ -8,9 +8,15 @@
 <% end %>
 
 <%= form_with(model: @setup, local: true) do |f| %>
-<p>
+
+<!--<p>
     <%= f.label :car%><br/>
     <%= f.text_field :car %>
+</p> -->
+
+<p>
+    <%= f.label :car%><br/>
+    <%= f.select :car, ["Mayako MX8", "Mayako MX8e", "Associtaed RC8B4", "Associtaed RC8B4", "Kyosho MP10 TKI2", "Kyosho MP10 TKI2e", "Mugen 8R"] %>
 </p>
 
 <p>

@@ -48,4 +48,6 @@ before_action :set_setup, only: [:show, :edit, :update, :destroy]
     def setup_params
       (params.require(:setup).permit(:car, :driver, :track, :frshk, :frpst, :frspr, :reshk, :repst, :respr, :frdiff, :ctrdiff, :rediff))
     end
+
+   
 end
