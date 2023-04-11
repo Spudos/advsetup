@@ -1,0 +1,249 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ /* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+@import "bootstrap";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ /*
+  ========================================
+  Grid
+  ========================================
+*/
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*
+  ========================================
+  Typography
+  ========================================
+*/
+
+h1, h2, h3, h4, h5, p {
+  margin-bottom: 5px;
+}
+
+/*
+  ========================================
+  Buttons
+  ========================================
+*/
+
+.btn {
+  border-radius: 20px;
+  color: #030303;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  letter-spacing: .5px;
+  margin: 0;
+  text-transform: uppercase;
+}
+.btn-alt {
+  border: 3px solid #0777e6;
+  padding: 10px 30px;
+}
+
+/*
+  ========================================
+  Home
+  ========================================
+*/
+.primary-header a,
+.primary-footer a {
+  color: #050505;
+}
+.primary-header a:hover,
+.primary-footer a:hover {
+  color: #648880;
+}
+
+/*header {
+  background: #38d5f1;
+  background: -webkit-linear-gradient(to right, #8caaf3, #0329e6);
+  background:    -moz-linear-gradient(to right, #8caaf3, #0329e6);
+  background:         linear-gradient(to right, #8caaf3, #0329e6);
+}
+footer {
+  background: #38d5f1;
+  background: -webkit-linear-gradient(#8caaf3, #0329e6);
+  background:    -moz-linear-gradient(#8caaf3, #0329e6);
+  background:         linear-gradient(#8caaf3, #0329e6);
+}
+
+section {
+  float: left;
+  margin: 0 1.5%;
+  width: 70%;
+}
+aside {
+  float: right;
+  margin: 0 1.5%;
+  width: 20%;
+}*/
+
+footer {
+  clear: both;
+}
+
+a:hover {
+  color: #a9b2b9;
+}
+a {
+  color: #648880;
+}
+
+html {
+    font-size: 30px; /* px means "pixels": the base font size is now 10 pixels high */
+    font-family: "Open Sans", sans-serif; /* this should be the rest of the output you got from Google Fonts */
+  }
+
+body {
+    width: 1000px;
+    margin: 0 auto;
+    background-color: whitesmoke;
+  }
+
+p,
+  ul,
+  li {
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+h1 {
+    text-align: center;
+      font-size: 60px;
+  margin: 0;
+  padding: 20px 0;
+  color: #000000;
+  /*text-shadow: 3px 3px 1px black;*/
+}
+
+h2 {
+    text-align: center;
+      font-size: 40px;
+  margin: 0;
+  padding: 20px 0;
+  color: #c1d8ed;
+}
+
+h3 {
+    text-align: left;
+      font-size: 30px;
+  margin: 0;
+  padding: 20px 0;
+  color: #00539f;
+}
+
+h4 {
+    text-align: left;
+      font-size: 20px;
+  margin: 0;
+  padding: 20px 0;
+  color: #00539f;
+}
+
+h5 {
+    text-align: left;
+      font-size: 15px;
+  margin: 0;
+  padding: 20px 0;
+  color: #00539f;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+small {
+  text-align: center;
+    font-size: 10px;
+margin: 0;
+padding: 20px 0;
+color: #00539f;
+}
+
+table {
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+    background-color: rgb(169, 220, 242);
+    text-align: center;
+}
+
+th {
+  font-size: 20px;
+  width: 200px;
+  line-height: 2;
+  letter-spacing: 1px;
+  background-color: rgb(22, 157, 215);
+}

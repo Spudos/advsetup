@@ -1,0 +1,30 @@
+<header>
+<h1>Setup listing page</h1>
+</header>
+<table>
+    <thead>
+        <tr>
+            <th>Car</th>
+            <th>Driver</th>
+            <th>Track</th>
+            <th colspan="3">Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @setups.each do |setup| %>
+            <tr>
+                <td><%= setup.car %></td>
+                <td><%= setup.driver %></td>
+                <td><%= setup.track %></td>
+                <td><%= link_to 'Show', setup_path(setup)%></td>
+                <td><%= link_to 'Edit', edit_setup_path(setup)%></td>
+                <td><%= link_to 'Delete', setup_path(setup), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
+            </tr>
+        <% end %>
+
+    </tbody>
+</table>
+<p>
+    <%= link_to 'Create new setup', new_setup_path %>
+ </p> 
