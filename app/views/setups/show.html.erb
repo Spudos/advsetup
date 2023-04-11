@@ -1,17 +1,18 @@
-<h1>Show setup details</h1>
-
-<p>Car: <%= @setup.car %></P>
-<p>Driver: <%= @setup.driver %></P>
-<p>Track: <%= @setup.track %></P>
-<p>Front shock oil: <%= @setup.frshk %></P>
-<p>Front piston: <%= @setup.frpst %></P>
-<p>Front spring: <%= @setup.frspr %></P>
-<p>Rear shock oil: <%= @setup.reshk %></P>
-<p>Rear piston: <%= @setup.repst %></P>
-<p>Rear spring: <%= @setup.respr %></P>
-<p>Front Diff: <%= @setup.frdiff %></P>
-<p>Centre Diff: <%= @setup.ctrdiff %></P>
-<p>Rear Diff: <%= @setup.rediff %></P>
-<p><%= link_to 'Edit', edit_setup_path(@setup)%></P>
-<p><%= link_to 'Delete', setup_path(@setup), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></P>
-<p><%= link_to 'Return to setup listing', setups_path %></p>
+<div class="container" id="home-container">
+    <h1>Show setup details</h1>
+        <p>Car: <%= @setup.car %></P>
+        <p>Driver: <%= @setup.driver %></P>
+        <p>Track: <%= @setup.track %></P>
+        <p>Front shock oil: <%= @setup.frshk %></P>
+        <p>Front piston: <%= @setup.frpst %></P>
+        <p>Front spring: <%= @setup.frspr %></P>
+        <p>Rear shock oil: <%= @setup.reshk %></P>
+        <p>Rear piston: <%= @setup.repst %></P>
+        <p>Rear spring: <%= @setup.respr %></P>
+        <p>Front Diff: <%= @setup.frdiff %></P>
+        <p>Centre Diff: <%= @setup.ctrdiff %></P>
+        <p>Rear Diff: <%= @setup.rediff %></P>
+        <p><%= link_to 'Edit', edit_setup_path(@setup)%></P>
+        <p><%= link_to 'Delete', setup_path(@setup), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></P>
+        <p><%= link_to 'Return to setup listing', setups_path %></p>
+</div>

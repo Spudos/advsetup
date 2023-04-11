@@ -55,6 +55,7 @@ ol, ul {
 blockquote, q {
   quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
@@ -67,96 +68,45 @@ table {
 
  /*
   ========================================
-  Grid
+  Navbar
   ========================================
 */
+.navbar {
+  background-color: rgb(22, 157, 215)!important;
+}
 
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+.nav-link {
+  color: white !important;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
 }
 
 /*
   ========================================
   Typography
   ========================================
-*/
+
 
 h1, h2, h3, h4, h5, p {
   margin-bottom: 5px;
 }
 
-/*
-  ========================================
-  Buttons
-  ========================================
-*/
 
-.btn {
-  border-radius: 20px;
-  color: #030303;
-  cursor: pointer;
-  display: inline-block;
-  font-weight: 400;
-  letter-spacing: .5px;
-  margin: 0;
-  text-transform: uppercase;
-}
-.btn-alt {
-  border: 3px solid #0777e6;
-  padding: 10px 30px;
-}
-
-/*
   ========================================
   Home
   ========================================
 */
-.primary-header a,
-.primary-footer a {
-  color: #050505;
-}
-.primary-header a:hover,
-.primary-footer a:hover {
-  color: #648880;
-}
-
-/*header {
-  background: #38d5f1;
-  background: -webkit-linear-gradient(to right, #8caaf3, #0329e6);
-  background:    -moz-linear-gradient(to right, #8caaf3, #0329e6);
-  background:         linear-gradient(to right, #8caaf3, #0329e6);
-}
-footer {
-  background: #38d5f1;
-  background: -webkit-linear-gradient(#8caaf3, #0329e6);
-  background:    -moz-linear-gradient(#8caaf3, #0329e6);
-  background:         linear-gradient(#8caaf3, #0329e6);
-}
-
-section {
-  float: left;
-  margin: 0 1.5%;
-  width: 70%;
-}
-aside {
-  float: right;
-  margin: 0 1.5%;
-  width: 20%;
-}*/
-
-footer {
-  clear: both;
-}
-
-a:hover {
-  color: #a9b2b9;
-}
-a {
-  color: #648880;
+#home-container {
+  margin-top: 25px;
+  width: 1000px;
+  background-color: lightgrey;
 }
 
 html {
@@ -164,27 +114,49 @@ html {
     font-family: "Open Sans", sans-serif; /* this should be the rest of the output you got from Google Fonts */
   }
 
-body {
-    width: 1000px;
-    margin: 0 auto;
-    background-color: whitesmoke;
-  }
+#fakejumbo {
+  background-image: url(jumbo.webp);
+  background-color: #cccccc;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  height: 700px;
+}
 
+html,
+body {
+  height: 100%;
+  background-color: lightgrey;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#fixed-footer {
+  flex-shrink: none;
+}
+
+ /*
+  ========================================
+  Text and Headers
+  ========================================
+*/
 p,
   ul,
   li {
     font-size: 16px;
-    line-height: 2;
     letter-spacing: 1px;
 }
 
 h1 {
-    text-align: center;
-      font-size: 60px;
+  text-align: center;
   margin: 0;
-  padding: 20px 0;
   color: #000000;
-  /*text-shadow: 3px 3px 1px black;*/
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
 }
 
 h2 {
@@ -219,31 +191,33 @@ h5 {
   color: #00539f;
 }
 
-img {
-  display: block;
-  margin: 0 auto;
-}
-
 small {
   text-align: center;
-    font-size: 10px;
+    font-size: 15px;
 margin: 0;
 padding: 20px 0;
-color: #00539f;
 }
 
+ /*
+  ========================================
+  Table
+  ========================================
+*/
+
 table {
-    font-size: 16px;
-    line-height: 2;
-    letter-spacing: 1px;
-    background-color: rgb(169, 220, 242);
-    text-align: center;
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 1px;
+  background-color: rgb(169, 220, 242);
+  text-align: center;
+  margin-top: 25px;
 }
 
 th {
   font-size: 20px;
-  width: 200px;
+  width: 250px;
   line-height: 2;
   letter-spacing: 1px;
+  color: white;
   background-color: rgb(22, 157, 215);
 }
