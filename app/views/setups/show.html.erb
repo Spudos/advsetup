@@ -1,18 +1,67 @@
+<h1 class="text-center text-primary mt-4">Details Of Selected Setup Sheet</h1>
 <div class="container" id="home-container">
-    <h1>Show setup details</h1>
-        <p>Car: <%= @setup.car %></P>
-        <p>Driver: <%= @setup.driver %></P>
-        <p>Track: <%= @setup.track %></P>
-        <p>Front shock oil: <%= @setup.frshk %></P>
-        <p>Front piston: <%= @setup.frpst %></P>
-        <p>Front spring: <%= @setup.frspr %></P>
-        <p>Rear shock oil: <%= @setup.reshk %></P>
-        <p>Rear piston: <%= @setup.repst %></P>
-        <p>Rear spring: <%= @setup.respr %></P>
-        <p>Front Diff: <%= @setup.frdiff %></P>
-        <p>Centre Diff: <%= @setup.ctrdiff %></P>
-        <p>Rear Diff: <%= @setup.rediff %></P>
-        <p><%= link_to 'Edit', edit_setup_path(@setup)%></P>
-        <p><%= link_to 'Delete', setup_path(@setup), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></P>
-        <p><%= link_to 'Return to setup listing', setups_path %></p>
+    <%= form_with(model: @setup, local: true) do |f| %>
+    <div class="row mt-2 mb-3">
+    <div class="col">      
+        <div class="mb-3">
+        <%= f.label :car, class: "form-label-sm text-light" %>
+        <%= f.select :car, ["Mayako MX8", "Mayako MX8e", "Associtaed RC8B4", "Associtaed RC8B4", "Kyosho MP10 TKI2", "Kyosho MP10 TKI2e", "Mugen 8R"], class:"form-control-sm shadow rounded", placeholder: "Car" %>
+        </div>
+        <div class="mb-3">
+        <%= f.label :driver, class: "form-label-sm text-light" %>
+        <%= f.text_field :driver, class: "form-control-sm shadow rounded", placeholder: "driver" %>
+        <%= f.label :track, class: "form-label-sm text-light" %>
+        <%= f.text_field :track, class: "form-control-sm shadow rounded", placeholder: "track" %>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+        <%= f.label :"Front shock oil", class: "form-label-sm text-light" %>   
+        <%= f.text_field :frshk, class: "form-control-sm shadow rounded", placeholder: "Front shock" %> 
+        </div>
+        <div class="col-sm-4">
+        <%= f.label :"Rear shock oil", class: "form-label-sm text-light" %>
+        <%= f.text_field :reshk, class: "form-control-sm shadow rounded", placeholder: "Rear shock" %>
+        </div>
+        <div class="col-sm-4">
+        <%= f.label :"Front diff oil", class: "form-label-sm  text-light" %>
+        <%= f.text_field :frdiff, class: "form-control-sm shadow rounded", placeholder: "Front diff" %>
+        </div>                       
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+        <%= f.label :"Front piston", class: "form-label-sm text-light" %>   
+        <%= f.text_field :frpst, class: "form-control-sm shadow rounded", placeholder: "Front shock" %> 
+        </div>
+        <div class="col-sm-4">
+        <%= f.label :"Rear Piston", class: "form-label-sm text-light" %>
+        <%= f.text_field :repst, class: "form-control-sm shadow rounded", placeholder: "Rear shock" %>
+        </div>
+        <div class="col-sm-4">
+        <%= f.label :"Center diff oil", class: "form-label-sm  text-light" %>
+        <%= f.text_field :ctrdiff, class: "form-control-sm shadow rounded", placeholder: "Rear diff" %>
+        </div>                       
+    </div>
+    <div class="row mb-3">
+        <div class="col-sm-4">
+        <%= f.label :"Front spring", class: "form-label-sm text-light" %>   
+        <%= f.text_field :frspr, class: "form-control-sm shadow rounded", placeholder: "Front spring" %> 
+        </div>
+        <div class="col-sm-4">
+        <%= f.label :"Rear spring", class: "form-label-sm text-light" %>
+        <%= f.text_field :respr, class: "form-control-sm shadow rounded", placeholder: "Rear spring" %>
+        </div>
+        <div class="col-sm-4">
+        <%= f.label :"Rear diff oil", class: "form-label-sm  text-light" %>
+        <%= f.text_field :rediff, class: "form-control-sm shadow rounded", placeholder: "Rear diff" %>
+        </div>
+    </div>  
+</div>                         
+<div class="row mb-5">
+    <%= link_to 'Edit', edit_setup_path(@setup), class: "col-3 btn btn-outline-primary btn-sm d-grid gap-2 mx-auto" %>
+    <%= link_to 'Delete', setup_path(@setup), class: "col-3 btn btn-outline-primary btn-sm d-grid gap-2 mx-auto", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    <%= link_to 'Return to setup listing', setups_path, class: "col-3 btn btn-outline-primary btn-sm d-grid gap-2 mx-auto" %>
 </div>
+
+<% end %>
