@@ -57,10 +57,13 @@
         <%= f.label :"Rear diff oil", class: "form-label-sm  text-light" %>
         <%= f.text_field :rediff, class: "form-control-sm shadow rounded", placeholder: "Rear diff" %>
         </div>
-    </div>                       
-        <p>
-        <%= f.submit class: "btn btn-outline-primary btn-sm mt-2 mb-2 d-grid gap-2 mx-auto" %>
-        </p>  
-        <%= link_to 'Cancel and return to setup listing', setups_path, class: "btn btn-outline-primary btn-sm d-grid gap-2 col-4 mx-auto" %>  
-    <% end %>
+    </div>  
 </div>
+    <div class="container mt-3 mb-5">
+    <div class="row">                     
+        <%= f.submit class: "btn btn-outline-primary btn-sm col-6" %>
+        <%= link_to 'Cancel and return to setup listing', setups_path, class: "btn btn-outline-primary btn-sm col-6" %>  
+    </div>
+    </div>
+    <% end %>
+

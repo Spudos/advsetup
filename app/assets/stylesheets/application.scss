@@ -70,11 +70,11 @@ table {
   ========================================
   Navbar
   ========================================
-*/
+
 .navbar {
   background-color: rgb(22, 157, 215)!important;
 }
-
+*/
 .nav-link {
   color: white !important;
 }
@@ -90,40 +90,21 @@ table {
 
 /*
   ========================================
-  Typography
-  ========================================
-
-
-h1, h2, h3, h4, h5, p {
-  margin-bottom: 5px;
-}
-
-
-  ========================================
   Home
   ========================================
 */
 #home-container {
   margin-top: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   text-align: center;
-  height: 500px;
-  background-color: lightgray;
+  background-color: darkgray;
 }
 
 html {
     font-size: 30px; /* px means "pixels": the base font size is now 10 pixels high */
     font-family: "Open Sans", sans-serif; /* this should be the rest of the output you got from Google Fonts */
   }
-
-  /*
-  #fakejumbo {
-  background-image: url(jumbo.webp));
-  background-color: #cccccc;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  }
-*/
 
 html,
 body {
@@ -134,11 +115,6 @@ body {
 #page-content {
   flex: 1 0 auto;
 }
-
-#sticky-footer {
-  flex-shrink: none;
-}
-
  /*
   ========================================
   Text and Headers

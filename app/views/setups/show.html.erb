@@ -57,11 +57,12 @@
         <%= f.text_field :rediff, class: "form-control-sm shadow rounded", placeholder: "Rear diff" %>
         </div>
     </div>  
-</div>                         
-<div class="row mb-5">
-    <%= link_to 'Edit', edit_setup_path(@setup), class: "col-3 btn btn-outline-primary btn-sm d-grid gap-2 mx-auto" %>
-    <%= link_to 'Delete', setup_path(@setup), class: "col-3 btn btn-outline-primary btn-sm d-grid gap-2 mx-auto", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-    <%= link_to 'Return to setup listing', setups_path, class: "col-3 btn btn-outline-primary btn-sm d-grid gap-2 mx-auto" %>
+</div>  
+<div class="container mt-3 mb-5">                      
+<div class="row">
+    <%= link_to 'Edit', edit_setup_path(@setup), class: "col-4 btn btn-outline-primary btn-sm" %>
+    <%= link_to 'Delete', setup_path(@setup), class: "col-4 btn btn-outline-primary btn-sm", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    <%= link_to 'Return to setup listing', setups_path, class: "col-4 btn btn-outline-primary btn-sm" %>
 </div>
-
+</div>
 <% end %>

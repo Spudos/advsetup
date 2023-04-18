@@ -1,32 +1,26 @@
-<div id="page-content">
-    <h1 class="text-center text-primary mt-4">Saved Setup Sheets</h1>
-    <%= link_to 'Create new setup', new_setup_path, class: "btn btn-outline-primary btn-sm mt-2 d-grid gap-2 col-4 mx-auto" %>
 
-    <div class="container d-flex p-2" style="flex-wrap: wrap;">
-   
-        <% @setups.each do |setup| %>
-                
-                    <div class="row p-3">
-                        <div class="col">
-                            <div class="card text-center shadow bg-white rounded" style="width: 12rem; height: 8rem;">
-                                <div class="card-header p-1">
-                                <%= link_to setup.car, setup_path(setup), class: "text-success" %>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-subtitle text-center p-1"><%= setup.driver %></h3>
-                                    <h4 class="card-text text-center p-1"><%= setup.track %></h3>
-                                    <p text-center p-1> Last edited <%= time_ago_in_words(setup.updated_at) %> ago</p>
-                                    <%= link_to "View", setup_path(setup), class: "btn btn-outline-success btn-sm mt-2" %>
-                                    <%= link_to "Edit", edit_setup_path(setup), class: "btn btn-outline-info btn-sm mt-2" %>
-                                    <%= link_to "Delete", setup_path(setup), class: "btn btn-outline-danger btn-sm mt-2", 
-                                            data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+<h1 class="text-center text-primary mt-4">Saved Setup Sheets</h1>
+<%= link_to 'Create new setup', new_setup_path, class: "btn btn-outline-primary btn-sm mt-2 d-grid gap-2 col-4 mx-auto" %>
 
-                                </div>  
-                            </div>
-                        </div>
+<div class="container d-flex p-2" id="home-container" style="flex-wrap: wrap;">
+   <% @setups.each do |setup| %>
+        <div class="row p-3">
+            <div class="col">
+                <div class="card text-center shadow bg-white rounded" style="width: 12rem; height: 8rem;">
+                    <div class="card-header p-1">
+                    <%= link_to setup.car, setup_path(setup), class: "text-success" %>
                     </div>
-                
-        <% end %>
-                
-    </div>
+                <div class="card-body">
+                <h4 class="card-subtitle text-center p-1"><%= setup.driver %></h3>
+                <h4 class="card-text text-center p-1"><%= setup.track %></h3>
+                <p text-center p-1> Last edited <%= time_ago_in_words(setup.updated_at) %> ago</p>
+                <%= link_to "View", setup_path(setup), class: "btn btn-outline-success btn-sm mt-2" %>
+                <%= link_to "Edit", edit_setup_path(setup), class: "btn btn-outline-info btn-sm mt-2" %>
+                <%= link_to "Delete", setup_path(setup), class: "btn btn-outline-danger btn-sm mt-2", 
+                                            data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+                </div>  
+                </div>
+            </div>
+        </div>         
+    <% end %>            
 </div>
