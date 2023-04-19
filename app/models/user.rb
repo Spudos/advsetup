@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-before.save { self.email = email.downcase }
-has_many :setups, dependant: :destroy
+before_save { self.email = email.downcase }
+has_many :setups
     validates :username, presence: true, 
                     uniqueness: { case_sensitive: false }, 
                     length: { minimum: 3, maximum: 25 }
