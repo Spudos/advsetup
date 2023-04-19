@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_18_160906) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_19_143521) do
   create_table "setups", force: :cascade do |t|
     t.string "car"
     t.text "driver"
@@ -26,6 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_18_160906) do
     t.integer "frdiff"
     t.integer "ctrdiff"
     t.integer "rediff"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,6 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_18_160906) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end

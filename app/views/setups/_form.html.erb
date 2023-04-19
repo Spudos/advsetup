@@ -2,67 +2,66 @@
     <%= form_with(model: @setup, local: true) do |f| %> 
     <div class="row mb-3">
         <div class="col">  
-        <%= render 'shared/errors' %>   
+        <%= render 'shared/errors', obj: @setup %>   
         </div>   
         <div class="mb-3">
-        <%= f.label :car, class: "form-label-sm text-light" %>
+        <%= f.label :car, class: "form-label-sm" %>
         <%= f.select :car, ["Mayako MX8", "Mayako MX8e", "Associtaed RC8B4", "Associtaed RC8B4", "Kyosho MP10 TKI2", "Kyosho MP10 TKI2e", "Mugen 8R"], class:"form-control-sm shadow rounded", placeholder: "Car" %>
         </div>
         <div class="mb-3">
-        <%= f.label :driver, class: "form-label-sm text-light" %>
+        <%= f.label :driver, class: "form-label-sm" %>
         <%= f.text_field :driver, class: "form-control-sm shadow rounded", placeholder: "driver" %>
-        <%= f.label :track, class: "form-label-sm text-light" %>
+        <%= f.label :track, class: "form-label-sm" %>
         <%= f.text_field :track, class: "form-control-sm shadow rounded", placeholder: "track" %>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-4">
-        <%= f.label :"Front shock oil", class: "form-label-sm text-light" %>   
-        <%= f.text_field :frshk, class: "form-control-sm shadow rounded", placeholder: "Front shock" %> 
+        <%= f.label :"Front shock oil", class: "form-label-sm" %>   
+        <%= f.text_field :frshk, class: "form-control-sm shadow rounded", placeholder: "Front shock oil" %> 
         </div>
         <div class="col-sm-4">
-        <%= f.label :"Rear shock oil", class: "form-label-sm text-light" %>
-        <%= f.text_field :reshk, class: "form-control-sm shadow rounded", placeholder: "Rear shock" %>
+        <%= f.label :"Rear shock oil", class: "form-label-sm" %>
+        <%= f.text_field :reshk, class: "form-control-sm shadow rounded", placeholder: "Rear shock oil" %>
         </div>
         <div class="col-sm-4">
-        <%= f.label :"Front diff oil", class: "form-label-sm  text-light" %>
-        <%= f.text_field :frdiff, class: "form-control-sm shadow rounded", placeholder: "Front diff" %>
+        <%= f.label :"Front diff oil", class: "form-label-sm " %>
+        <%= f.text_field :frdiff, class: "form-control-sm shadow rounded", placeholder: "Front diff oil" %>
         </div>                       
     </div>
     <div class="row">
         <div class="col-sm-4">
-        <%= f.label :"Front piston", class: "form-label-sm text-light" %>   
-        <%= f.text_field :frpst, class: "form-control-sm shadow rounded", placeholder: "Front shock" %> 
+        <%= f.label :"Front piston", class: "form-label-sm" %>   
+        <%= f.text_field :frpst, class: "form-control-sm shadow rounded", placeholder: "Front piston" %> 
         </div>
         <div class="col-sm-4">
-        <%= f.label :"Rear Piston", class: "form-label-sm text-light" %>
-        <%= f.text_field :repst, class: "form-control-sm shadow rounded", placeholder: "Rear shock" %>
+        <%= f.label :"Rear Piston", class: "form-label-sm" %>
+        <%= f.text_field :repst, class: "form-control-sm shadow rounded", placeholder: "Rear piston" %>
         </div>
         <div class="col-sm-4">
-        <%= f.label :"Center diff oil", class: "form-label-sm  text-light" %>
-        <%= f.text_field :ctrdiff, class: "form-control-sm shadow rounded", placeholder: "Rear diff" %>
+        <%= f.label :"Center diff oil", class: "form-label-sm " %>
+        <%= f.text_field :ctrdiff, class: "form-control-sm shadow rounded", placeholder: "Center diff oil" %>
         </div>                       
     </div>
 
     <div class="row mb-1">
         <div class="col-sm-4">
-        <%= f.label :"Front spring", class: "form-label-sm text-light" %>   
+        <%= f.label :"Front spring", class: "form-label-sm" %>   
         <%= f.text_field :frspr, class: "form-control-sm shadow rounded", placeholder: "Front spring" %> 
         </div>
         <div class="col-sm-4">
-        <%= f.label :"Rear spring", class: "form-label-sm text-light" %>
+        <%= f.label :"Rear spring", class: "form-label-sm" %>
         <%= f.text_field :respr, class: "form-control-sm shadow rounded", placeholder: "Rear spring" %>
         </div>
         <div class="col-sm-4">
-        <%= f.label :"Rear diff oil", class: "form-label-sm  text-light" %>
-        <%= f.text_field :rediff, class: "form-control-sm shadow rounded", placeholder: "Rear diff" %>
+        <%= f.label :"Rear diff oil", class: "form-label-sm " %>
+        <%= f.text_field :rediff, class: "form-control-sm shadow rounded", placeholder: "Rear diff oil" %>
         </div>
     </div>  
 
     <div class="row bg-light mt-3">                     
-        <%= f.submit class: "btn btn-outline-primary btn-sm col-6" %>
-        <%= link_to 'Cancel and return to setup listing', setups_path, class: "btn btn-outline-primary btn-sm col-6" %>  
-    </div>
+        <%= f.submit class: "btn btn-outline-secondary btn-sm col-6" %>
+        <%= link_to 'Cancel and return to setup listing', setups_path, class: "btn btn-outline-secondary btn-sm col-6" %>
 </div>
 <% end %>
 

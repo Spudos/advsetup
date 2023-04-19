@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'home', to: 'pages#home'
   get 'setups', to: 'setups#index'
-
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
   resources :setups
 
 end
