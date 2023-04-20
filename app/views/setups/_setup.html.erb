@@ -5,7 +5,10 @@
                 <div class="card text-center shadow bg-white rounded" style="width: 12rem; height: 10rem;">
                     <div class="card-header">
                     <%= link_to setup.car, setup_path(setup), class: "text-success" %>
-                    <p class="card-subtitle text-center p-2">Created by: <%= setup.user.username %></p>
+                    <p class="card-subtitle text-center p-2">
+                    <% if setup.user %>
+                    Created by: <%= link_to setup.user.username, user_path(setup.user) %></p>
+                    <% end %>
                     </div>
                 <div class="card-body">
                 <p class="card-subtitle text-center p-1">Driver: <%= setup.driver %></p>

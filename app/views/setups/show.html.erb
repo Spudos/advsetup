@@ -3,22 +3,21 @@
     <%= form_with(model: @setup, local: true) do |f| %>
     <div class="row mt-2 mb-3">
     <div class="col">      
-        <div class="mb-3">
-        <%= f.label :car, class: "form-label-sm" %>
-        <%= f.select :car, ["Mayako MX8", "Mayako MX8e", "Associtaed RC8B4", "Associtaed RC8B4", "Kyosho MP10 TKI2", "Kyosho MP10 TKI2e", "Mugen 8R"], class:"form-control-sm shadow rounded", placeholder: "Car" %>
+        <div class="mb-1"> Setup created by <%= @setup.user.username if @setup.user %>
+        <%= link_to gravatar_for(@setup.user), user_path(@setup.user) %>
         </div>
-        <div class="mb-3">
+        <%= f.label :car, class: "form-label-sm" %>
+        <%= f.select :car, ["Mayako MX8", "Mayako MX8e", "Associtaed RC8B4", 
+            "Associtaed RC8B4", "Kyosho MP10 TKI2", "Kyosho MP10 TKI2e", "Mugen 8R"], 
+            class:"form-control-sm shadow rounded", placeholder: "Car" %>
         <%= f.label :driver, class: "form-label-sm" %>
         <%= f.text_field :driver, class: "form-control-sm shadow rounded", placeholder: "driver" %>
         <%= f.label :track, class: "form-label-sm" %>
         <%= f.text_field :track, class: "form-control-sm shadow rounded", placeholder: "track" %>
-        <%= f.label :user, class: "form-label-sm" %>
-        <%= f.text_field @setup.user.username %>
         </div>
     </div>
-    </div>
     <div class="row">
-        <h3 class="text-center mt-4"><u>Shock and Diff details</u></h3>
+        <h3 class="text-center"><u>Shock and Diff details</u></h3>
         <div class="col-sm-4">
         <%= f.label :"Front shock oil", class: "form-label-sm" %>   
         <%= f.text_field :frshk, class: "form-control-sm shadow rounded", placeholder: "Front shock oil" %> 
