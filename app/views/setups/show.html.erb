@@ -12,6 +12,8 @@
         <%= f.text_field :driver, class: "form-control-sm shadow rounded", placeholder: "driver" %>
         <%= f.label :track, class: "form-label-sm" %>
         <%= f.text_field :track, class: "form-control-sm shadow rounded", placeholder: "track" %>
+        <%= f.label :user, class: "form-label-sm" %>
+        <%= f.text_field @setup.user.username %>
         </div>
     </div>
     </div>
