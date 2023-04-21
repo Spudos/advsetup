@@ -5,7 +5,7 @@ before_action :set_setup, only: [:show, :edit, :update, :destroy]
     end
 
     def index
-      @setups = Setup.all
+      @setups = Setup.paginate(:page => params[:page], :per_page => 5)
     end
 
     def new
