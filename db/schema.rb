@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_19_143521) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_24_140212) do
   create_table "setups", force: :cascade do |t|
     t.string "car"
     t.text "driver"
@@ -35,6 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_19_143521) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.boolean "admin", default: false
   end
 
 end

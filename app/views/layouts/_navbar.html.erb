@@ -9,34 +9,44 @@
               <li class="nav-item">
                 <%= link_to "Home", root_path, class: "nav-link" %>
               </li>
-              <li class="nav-item">
-                 <%= link_to "Setups", setups_path, class: "nav-link" %>
-              </li>
-              <li class="nav-item">
-                 <%= link_to "Sign Up", signup_path, class: "nav-link" %>
-              </li>
+
               <li class="nav-item">
               <%= link_to "Users", users_path, class: "nav-link" %>
               </li>
-              <li class="nav-item">
-              <%= link_to "Login", login_path, class: "nav-link" %>
-              </li>
-              <li class="nav-item">
-              <%= link_to 'Logout', logout_path, class: "nav-link", method: :delete %>
-              </li>
-
-              <!--
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Setups
-                </a>
+              
+              <li class="nav-item dropdown">          
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Setups </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="setups">Setups</a></li>
-                  <li><a class="dropdown-item" href="setups">Setups</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="setups">Setups</a></li>
+                  <% if logged_in? %>                  
+                      <%= link_to "Create new setup",  new_setup_path, class: "dropdown-item" %>
+                  <% end %>
+                  <%= link_to "View setups",  setups_path, class: "dropdown-item" %>  
                 </ul>
               </li>
+
+              <li class="nav-item dropdown">  
+                  <% if logged_in? %>                         
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">  
+                <%= "(Admin)" if current_user.admin? %> Profile [<%= current_user.username %>] </a>
+                <ul class="dropdown-menu">
+                  <%= link_to "View your profile", user_path(current_user), class: "dropdown-item" %>
+                  <%= link_to "Edit your profile", edit_user_path(current_user), class: "dropdown-item" %>   
+                  <%= link_to "Delete your profile", user_path(current_user), class: "dropdown-item text-danger", method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>                  
+                </ul>  
+                  <li class="nav-item">
+                  <%= link_to 'Logout', logout_path, class: "nav-link", method: :delete %>
+                  </li>                             
+                  <% else %>
+                        <li class="nav-item">
+                        <%= link_to "Login", login_path, class: "nav-link" %>
+                        </li>
+                        <li class="nav-item">
+                        <%= link_to "Sign Up", signup_path, class: "nav-link" %>
+                        </li>                  
+                  <% end %>
+              </li>
+         
+            <!-- 
               <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
               </li>

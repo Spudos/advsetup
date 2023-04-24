@@ -1,5 +1,7 @@
 class SetupsController < ApplicationController
 before_action :set_setup, only: [:show, :edit, :update, :destroy]
+before_action :require_user, except: [:show, :index]
+before_action :require_same_user, only: [:edit, :update, :destroy]
 
     def show
     end
@@ -17,6 +19,7 @@ before_action :set_setup, only: [:show, :edit, :update, :destroy]
 
     def create
       @setup = Setup.new(setup_params)
+      @setup.user = current_user
       if @setup.save
         flash[:notice] = "Setup was created successfully."
         redirect_to @setup 
@@ -49,5 +52,11 @@ before_action :set_setup, only: [:show, :edit, :update, :destroy]
       (params.require(:setup).permit(:car, :driver, :track, :frshk, :frpst, :frspr, :reshk, :repst, :respr, :frdiff, :ctrdiff, :rediff))
     end
 
-   
+    def require_same_user
+      if current_user != @setup.user && !current_user.admin?
+        flash[:alert] = "You can only edit or delete your own setup"
+        redirect_to @setup
+      end
+    end
+
 end

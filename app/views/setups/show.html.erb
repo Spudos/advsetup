@@ -103,8 +103,10 @@
         </div>
     </div>
 <div class="row bg-light">
+    <% if logged_in? && (@setup.user == current_user || current_user.admin?) %>
     <%= link_to 'Edit', edit_setup_path(@setup), class: "col-4 btn btn-outline-secondary btn-sm" %>
     <%= link_to 'Delete', setup_path(@setup), class: "col-4 btn btn-outline-secondary btn-sm", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    <% end %>
     <%= link_to 'Return to setup listing', setups_path, class: "col-4 btn btn-outline-secondary btn-sm" %>
 </div>      
 </div>  

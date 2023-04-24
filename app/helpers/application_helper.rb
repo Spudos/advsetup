@@ -8,4 +8,8 @@ def gravatar_for(user, options = { size: 80} )
     image_tag(gravatar_url, alt: user.username, class: "rounded shadow d-block mx-auto")
 end
 
+
+
+
+
 end

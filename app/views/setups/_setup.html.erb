@@ -15,9 +15,11 @@
                 <p class="card-subtitle text-center p-1">Track: <%= setup.track %></p>
                 <p text-center p-1> Last edited <%= time_ago_in_words(setup.updated_at) %> ago</p>
                 <%= link_to "View", setup_path(setup), class: "btn btn-outline-success btn-sm mt-2" %>
-                <%= link_to "Edit", edit_setup_path(setup), class: "btn btn-outline-info btn-sm mt-2" %>
-                <%= link_to "Delete", setup_path(setup), class: "btn btn-outline-danger btn-sm mt-2", 
-                                            data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+                    <% if logged_in? && (setup.user == current_user || current_user.admin? )%>
+                    <%= link_to "Edit", edit_setup_path(setup), class: "btn btn-outline-info btn-sm mt-2" %>
+                    <%= link_to "Delete", setup_path(setup), class: "btn btn-outline-danger btn-sm mt-2", 
+                                                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+                    <% end %>
                 </div>  
                 </div>
             </div>
