@@ -49,7 +49,8 @@ before_action :require_same_user, only: [:edit, :update, :destroy]
     end
 
     def setup_params
-      (params.require(:setup).permit(:car, :driver, :track, :frshk, :frpst, :frspr, :reshk, :repst, :respr, :frdiff, :ctrdiff, :rediff))
+      params.require(:setup).permit(:car, :driver, :track, :frshk, :frpst, :frspr, :reshk,
+         :repst, :respr, :frdiff, :ctrdiff, :rediff, category_ids: [])
     end
 
     def require_same_user

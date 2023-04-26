@@ -57,9 +57,15 @@
         <%= f.label :"Rear diff oil", class: "form-label-sm " %>
         <%= f.text_field :rediff, class: "form-control-sm shadow rounded", placeholder: "Rear diff oil" %>
         </div>
-    </div>  
+    </div> 
 
-    <div class="row bg-light mt-3">                     
+    <div class="row mb-4 mt-4">
+        <%= f.label :"Category", class: "form-label-sm" %>   
+        <%= f.collection_select(:category_ids, Category.all, :id, :name,
+         {prompt: "Please select the relevant categories"}, {multiple: true, size: 4, class: "custom-select shadow rounded"} ) %>
+    </div>     
+
+    <div class="row bg-light mb-10 mt-3">                     
         <%= f.submit class: "btn btn-outline-secondary btn-sm col-6" %>
         <%= link_to 'Cancel and return to setup listing', setups_path, class: "btn btn-outline-secondary btn-sm col-6" %>
 </div>

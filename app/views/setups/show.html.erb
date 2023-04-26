@@ -5,6 +5,9 @@
     <div class="col">      
         <div class="mb-1"> Setup created by <%= @setup.user.username if @setup.user %>
         <%= link_to gravatar_for(@setup.user), user_path(@setup.user) %>
+            <% if @setup.categories.any?%>
+            <div class="mt-2"><%= render @setup.categories %></div>
+            <% end %>
         </div>
         <%= f.label :car, class: "form-label-sm" %>
         <%= f.select :car, ["Mayako MX8", "Mayako MX8e", "Associtaed RC8B4", 

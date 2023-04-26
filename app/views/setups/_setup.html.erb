@@ -9,6 +9,9 @@
                     <% if setup.user %>
                     Created by: <%= link_to setup.user.username, user_path(setup.user) %></p>
                     <% end %>
+                        <% if setup.categories.any?%>
+                        <div class="mt-2"><%= render setup.categories %></div>
+                        <% end %>
                     </div>
                 <div class="card-body">
                 <p class="card-subtitle text-center p-1">Driver: <%= setup.driver %></p>
